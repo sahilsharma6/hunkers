@@ -24,6 +24,7 @@
 html,
 body {
     /* overflow-x: hidden; */
+    scroll-behavior: smooth;
 }
 
 button {
@@ -66,6 +67,7 @@ ul {
 }
 
 
+
 @media (max-width:500px) {
     p{
         font-size: 22px;
@@ -87,7 +89,11 @@ ul {
     top: 0;
     z-index: 9999;
 }
+.h{
+    background-color: #ffffff;
+    box-shadow:1px 2px 20px 9px #e5edf0;;
 
+}
 .inner-header {
     justify-content: space-between;
     height: 100%;
@@ -226,6 +232,25 @@ nav{
 
 } */
 
+
+.btn-1{
+    border: none;
+    background-color: var(--button-1);
+    color: white;
+    padding: 15px 50px;
+    border-radius: 50px;
+    box-shadow:0px 12px 16px 0px #f3b0c0;
+    animation: up-down 1s infinite linear;
+}
+
+.btn-2{
+    border: none;
+    background-color: var(--button-2);
+    color: white;
+    padding: 15px 50px;
+    border-radius: 50px;
+}
+
 @media  (max-width:768px) {
     nav{
         display: none;
@@ -252,17 +277,9 @@ nav{
 
     .navbar button{
         display: block;
-        border: none;
-        background-color: var(--button-1);
-        color: white;
-        padding: 15px 50px;
-        border-radius: 50px;
-        box-shadow:0px 12px 16px 0px #f3b0c0;
+        
+    }
 
-    }
-    .navbar button:hover{
-        transform: scale(.9)
-    }
     .hm{
         display: block;
     }
@@ -319,11 +336,21 @@ padding: 15px 30px;
 margin-top: 25px;
 border-style: dashed;
 text-align: start;
+animation: up-down 1s infinite linear;
+/* transform: scale(.6); */
 }
 
-.hero-section .hero-left button:hover{
-    transform: scale(.9)
+@keyframes up-down {
+    50%{
+        transform: scale(.9);        
+    }
+    100%{
+        transform: scale(1);        
+    }
+
 }
+
+
 
 
 .hero-section .hero-right{
@@ -333,24 +360,193 @@ text-align: start;
 
 
 .hero-section .hero-right img{
-    height: 350px;
+    width:100%;
+    height: auto;
 }
 
-@media (max-width:500px) {
-    .hero-section .hero-right img{
-        height: 200px;
+
+/* ------------------------------------------ */
+
+
+
+/* --------------------process-section---------------------- */
+
+h2{
+    font-size: 36px;
+    font-family: var(--font-1);
+    color: var(--font-color-1);
+}
+p{
+    font-size: 26px;
+}
+
+.process-section h2{
+    margin-block: 50px;
+    text-align: center;
+}
+
+.process-section > p{
+    text-align: center;
+    /* color: #fff; */
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+.process-section .give{
+    /* border: 1px solid #000; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    place-items: center;
+}
+.process-section .give p{
+
+}
+.box{
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 280px;
+    /* border: 1px solid red; */
+    background-color: rgba(148, 216, 201, 0.849);
+    background-color: rgba(148, 216, 201, 0.116);
+    border-radius: 10px;
+    min-height: 300px;
+}
+
+.box .box-img{
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
+.box .box-img img{
+    /* background-color: var(--font-color-2); */
+    /* background-color: #fff; */
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    /* border: 1px solid #000; */
+    /* width: 100px; */
+    cursor: pointer;
+}
+
+.box .box-img span{
+    position: absolute;
+    top: 20px;
+    left: 125px;
+    /* font-size: 25px; */
+    background-color: var(--font-color-1);
+    padding: 15px 20px;
+    border-radius: 50%;
+    color: #fff;
+}
+.box p{
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 10px;
+}
+
+.box button{
+margin-top: 30px;
+}
+
+
+@media (max-width:700px) {
+    .process-section .give{
+        grid-template-columns: 1fr 
     }
-    
 }
 
 
 
-.h{
-    /* background-color: white; */
-    background-color: #ffffff;
-    box-shadow:1px 2px 20px 9px #e5edf0;;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------ */
+
+
+
+
+
+.contact h2{
+    text-align: center;
+    margin-block:50px;
 }
+
+.inner-contact{
+    /* flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    /* background-color: #fff; */
+}
+
+@media (max-width:900px) {
+    .inner-contact{
+        grid-template-columns: 1fr;
+    }
+}
+.contact .image{
+    /* flex: 1 1 35rem; */
+}
+
+.inner-contact .image img{
+    width: 100%;
+}
+
+.inner-contact form{
+/* flex: 1 1 50rem; */
+border: .1rem solid rgba(0,0,0,.1);
+border-radius: .5rem;
+padding: .5rem;
+width: 100%;
+}
+
+.inner-contact form .input-box{
+
+    display: grid;
+}
+
+.inner-contact form .input-box input,
+input,
+.inner-contact form textarea{
+    width: 100%;
+    padding: 1rem;
+    margin: .7rem 0;
+    /* font-size: 1.5rem; */
+    border: .1rem solid rgba(0,0,0,.1);
+    border-radius: .5rem;
+    text-transform: none;
+    color: #333;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
